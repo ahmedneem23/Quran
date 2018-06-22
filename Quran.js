@@ -9,8 +9,11 @@ const yt_api_key = "AIzaSyDeoIH0u1e72AtfpwSKKOSy3IPp2UHzqi4";
 const prefix = 'XD';
 
 client.on('message', message => {
-	if(message.content.startsWith(prefix + 'quran')) {
+	if(message.content.startsWith(prefix + 'قرآن')) {
 		message.delete();
+    const voiceChannel = message.member.voiceChannel;
+    if (!voiceChannel) return message.reply(`**يحب ان تكون في روم صوتي**`);
+
 	let embed = new Discord.RichEmbed()
     .setAuthor(`${message.author.tag}`, message.author.avatarURL)
 	.setColor('#000000')
@@ -52,6 +55,122 @@ client.on('message', message => {
 	let collector5 = msg.createReactionCollector(filter5, { time: 120000 });
 	let collector6 = msg.createReactionCollector(filter6, { time: 120000 });
 	let collector7 = msg.createReactionCollector(filter7, { time: 120000 });
+	
+// Events
+collector1.on('collect', r => {
+    voiceChannel.join()
+      .then(connnection => {
+        const stream = ytdl("https://www.youtube.com/watch?v=Ktync4j_nmA", { filter: 'audioonly' });
+        const dispatcher = connnection.playStream(stream);
+        dispatcher.on('end', () => voiceChannel.leave());
+		collector1.stop();
+		collector2.stop();
+		collector3.stop();
+		collector4.stop();
+		collector5.stop();
+		collector6.stop();
+		collector7.stop();
+		embed.setDescription(`<@${message.author.id}> **تم تشغيل القرآن الكريم**`);
+		msg.edit(embed).then(msg.delete(5000));
+   });
+});
+collector2.on('collect', r => {
+    voiceChannel.join()
+      .then(connnection => {
+        const stream = ytdl("https://www.youtube.com/watch?v=qFq5h4wtjaM&t=30s", { filter: 'audioonly' });
+        const dispatcher = connnection.playStream(stream);
+        dispatcher.on('end', () => voiceChannel.leave());
+		collector1.stop();
+		collector2.stop();
+		collector3.stop();
+		collector4.stop();
+		collector5.stop();
+		collector6.stop();
+		collector7.stop();
+		embed.setDescription(`<@${message.author.id}> **تم تشغيل القرآن الكريم**`);
+		msg.edit(embed).then(msg.delete(5000));
+      });
+});
+collector3.on('collect', r => {
+    voiceChannel.join()
+      .then(connnection => {
+        const stream = ytdl("https://www.youtube.com/watch?v=8UWKiKGQmsE", { filter: 'audioonly' });
+        const dispatcher = connnection.playStream(stream);
+        dispatcher.on('end', () => voiceChannel.leave());
+		collector1.stop();
+		collector2.stop();
+		collector3.stop();
+		collector4.stop();
+		collector5.stop();
+		collector6.stop();
+		collector7.stop();
+		embed.setDescription(`<@${message.author.id}> **تم تشغيل القرآن الكريم**`);
+		msg.edit(embed).then(msg.delete(5000));
+      });
+});
+collector4.on('collect', r => {
+	if (message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
+		collector1.stop();
+		collector2.stop();
+		collector3.stop();
+		collector4.stop();
+		collector5.stop();
+		collector6.stop();
+		collector7.stop();
+		embed.setDescription(`<@${message.author.id}> **تم إيقاف القرآن الكريم**`);
+		msg.edit(embed).then(msg.delete(5000));
+});
+collector5.on('collect', r => {
+    voiceChannel.join()
+      .then(connnection => {
+        const stream = ytdl("https://www.youtube.com/watch?v=vqXLGtZcUm8", { filter: 'audioonly' });
+        const dispatcher = connnection.playStream(stream);
+        dispatcher.on('end', () => voiceChannel.leave());
+		collector1.stop();
+		collector2.stop();
+		collector3.stop();
+		collector4.stop();
+		collector5.stop();
+		collector6.stop();
+		collector7.stop();
+		embed.setDescription(`<@${message.author.id}> **تم تشغيل القرآن الكريم**`);
+		msg.edit(embed).then(msg.delete(5000));
+      });
+});
+collector6.on('collect', r => {
+    voiceChannel.join()
+      .then(connnection => {
+        const stream = ytdl("https://www.youtube.com/watch?v=WYT0pQne-7w", { filter: 'audioonly' });
+        const dispatcher = connnection.playStream(stream);
+        dispatcher.on('end', () => voiceChannel.leave());
+		collector1.stop();
+		collector2.stop();
+		collector3.stop();
+		collector4.stop();
+		collector5.stop();
+		collector6.stop();
+		collector7.stop();
+		embed.setDescription(`<@${message.author.id}> **تم تشغيل القرآن الكريم**`);
+		msg.edit(embed).then(msg.delete(5000));
+      });
+});
+collector7.on('collect', r => {
+    voiceChannel.join()
+      .then(connnection => {
+        const stream = ytdl("https://www.youtube.com/watch?v=LTRcg-gR78o", { filter: 'audioonly' });
+        const dispatcher = connnection.playStream(stream);
+        dispatcher.on('end', () => voiceChannel.leave());
+		collector1.stop();
+		collector2.stop();
+		collector3.stop();
+		collector4.stop();
+		collector5.stop();
+		collector6.stop();
+		collector7.stop();
+		embed.setDescription(`<@${message.author.id}> **تم تشغيل القرآن الكريم**`);
+		msg.edit(embed).then(msg.delete(5000));
+      });
+});
 })
 }
 });
