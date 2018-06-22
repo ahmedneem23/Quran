@@ -6,9 +6,10 @@ const ytdl = require('ytdl-core');
 const client = new Client({ disableEveryone: true });
 const youtube = new YouTube(GOOGLE_API_KEY);
 const queue = new Map();
+var prefix = "XD"
 
 client.on('message', message => {
-	if(message.content.startsWith(prefix + 'قرآن')) {
+	if(message.content.startsWith(prefix + 'quran')) {
 		message.delete();
     const voiceChannel = message.member.voiceChannel;
     if (!voiceChannel) return message.reply(`**يحب ان تكون في روم صوتي**`);
