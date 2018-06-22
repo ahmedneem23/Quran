@@ -9,7 +9,7 @@ const queue = new Map();
 
 client.on('message', message => {
 const yt = require('ytdl-core');
-  if (message.content.startsWith('+quran')) {
+  if (message.content.startsWith('XDquran')) {
               if(!message.channel.guild) return message.reply('** This command only for servers **');
 
     const voiceChannel = message.member.voiceChannel;
@@ -26,7 +26,7 @@ const yt = require('ytdl-core');
       });
   }
   
-  if (message.content.startsWith('+stop')) {
+  if (message.content.startsWith('XDqstop')) {
               if(!message.channel.guild) return message.reply('** This command only for servers **');
 
     const voiceChannel = message.member.voiceChannel;
