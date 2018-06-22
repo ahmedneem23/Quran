@@ -1,15 +1,15 @@
-const { Client, Util } = require('discord.js');
-const Discord = require("discord.js");
-const { TOKEN, PREFIX, GOOGLE_API_KEY } = require('./config');
-const YouTube = require('simple-youtube-api');
+const Discord = require('discord.js');
+const client = new Discord.Client();
 const ytdl = require('ytdl-core');
-const client = new Client({ disableEveryone: true });
-const youtube = new YouTube(GOOGLE_API_KEY);
-const queue = new Map();
-var prefix = "XD"
+const request = require('request');
+const fs = require('fs');
+const getYoutubeID = require('get-youtube-id');
+const fetchVideoInfo = require('youtube-info');
+const yt_api_key = "AIzaSyDeoIH0u1e72AtfpwSKKOSy3IPp2UHzqi4";
+const prefix = '*';
 
 client.on('message', message => {
-	if(message.content.startsWith(prefix + 'quran')) {
+	if(message.content.startsWith(prefix + 'قرآن')) {
 		message.delete();
     const voiceChannel = message.member.voiceChannel;
     if (!voiceChannel) return message.reply(`**يحب ان تكون في روم صوتي**`);
@@ -174,5 +174,4 @@ collector7.on('collect', r => {
 })
 }
 });
-
-client.login(TOKEN);
+client.login = process.env.BOT_TOKEN;
