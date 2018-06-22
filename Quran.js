@@ -52,4 +52,7 @@ client.on('message', message => {
 	let collector5 = msg.createReactionCollector(filter5, { time: 120000 });
 	let collector6 = msg.createReactionCollector(filter6, { time: 120000 });
 	let collector7 = msg.createReactionCollector(filter7, { time: 120000 });
+})
+}
+});
 client.login = process.env.BOT_TOKEN;
