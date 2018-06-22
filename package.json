@@ -13,6 +13,8 @@
     "ytdl-core":"0.20.4" ,
     "simple-youtube-api":"5.0.2" ,
     "ffmpeg-binaries":"3.2.2-3" ,
+    "get-youtube-id":"1.0.0" ,
+    "youtube-info":"1.2.0" ,
     "node-opus": "^0.2.7",
     "opusscript": "0.0.6"
   },
